@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Video Click Redirect</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(180deg,#050b18,#000);
+  font-family:Segoe UI,Arial,sans-serif;
+  color:#fff;
+}
+
+/* MAIN CONTAINER */
+.wrapper{
+  width:100%;
+  max-width:900px;
+  padding:30px 20px;
+}
+
+/* HEADER */
+.header{
+  text-align:center;
+  margin-bottom:25px;
+}
+.header h1{
+  margin:0;
+  font-size:28px;
+  color:#4cc3ff;
+  letter-spacing:1px;
+}
+.header p{
+  margin-top:6px;
+  color:#9bb4d0;
+  font-size:14px;
+}
+
+/* VIDEO VIRAL BOX (BIRU + LINK) */
+.viral-box{
+  background:linear-gradient(135deg,#007bff,#003d8f);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 0 40px rgba(0,140,255,.8);
+  margin-bottom:25px;
+  text-align:center;
+}
+.viral-box a{
+  text-decoration:none;
+  color:#fff;
+  display:block;
+}
+.viral-box:hover{
+  box-shadow:0 0 60px rgba(0,160,255,1);
+  transform:scale(1.02);
+  transition:.3s;
+}
+.viral-box h2{
+  margin:0;
+  font-size:22px;
+  letter-spacing:1px;
+}
+.viral-box span{
+  display:block;
+  margin-top:6px;
+  font-size:13px;
+  color:#d6ecff;
+}
+
+/* VIDEO */
+.video-card{
+  background:#0a0f1f;
+  padding:15px;
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(0,150,255,.5);
+}
+video{
+  width:100%;
+  border-radius:15px;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  margin-top:20px;
+  font-size:12px;
+  color:#6c85a5;
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <div class="header">
+    <h1> VIDEO VIRAL</h1>
+    <p>Nikmati koleksi video viral terbaru dengan kualitas terbaik</p>
+  </div>
+
+  <!-- FOLDER / SECTION VIDEO VIRAL (LINK DITAMBAHKAN) -->
+  <div class="viral-box">
+    <a href="https://s.shopee.co.id/7AXQ9Zm5Ua" target="_blank" rel="noopener">
+      <h2> VIDEO VIRAL</h2>
+      <span>Klik untuk membuka konten viral</span>
+    </a>
+  </div>
+
+  <!-- VIDEO PLAYER (TIDAK DIUBAH) -->
+  <div class="video-card">
+    <video id="vid" controls playsinline preload="metadata">
+      <source src="https://cdn.videy.co/AIT6v7vr1.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="footer">
+    © 2026 Video Viral Platform
+  </div>
+
+</div>
+
+<script>
+const video = document.getElementById("vid");
+
+// LINK IKLAN (TIDAK DIUBAH)
+const adUrl = "https://s.shopee.co.id/7AXQ9Zm5Ua";
+
+let alreadyRedirect = false;
+
+video.addEventListener("play", function () {
+  if (alreadyRedirect) return;
+  alreadyRedirect = true;
+  video.pause();
+  window.open(adUrl, "_blank");
+});
+</script>
+
+</body>
+</html>
